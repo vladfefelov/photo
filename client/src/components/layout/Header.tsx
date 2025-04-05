@@ -13,7 +13,6 @@ export default function Header() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState(i18n.getLanguage());
   
   const navLinks: NavLink[] = [
     { href: "#home", label: i18n.translate("nav.home") },
@@ -21,19 +20,6 @@ export default function Header() {
     { href: "#about", label: i18n.translate("nav.about") },
     { href: "#contact", label: i18n.translate("nav.contact") },
   ];
-  
-  // Update language state when i18n language changes
-  useEffect(() => {
-    const handleLanguageChange = () => {
-      setLanguage(i18n.getLanguage());
-    };
-    
-    window.addEventListener("languageChange", handleLanguageChange);
-    
-    return () => {
-      window.removeEventListener("languageChange", handleLanguageChange);
-    };
-  }, []);
   
   // Detect scroll to change header style
   useEffect(() => {
@@ -47,11 +33,6 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
-  // Toggle language
-  const toggleLanguage = () => {
-    i18n.toggleLanguage();
-  };
   
   // Smooth scroll to section
   const scrollToSection = (id: string) => {
@@ -90,12 +71,6 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="text-white/90 hover:text-primary transition-colors font-medium ml-2 px-3 py-1 rounded-full border border-white/10 hover:border-primary/30 text-xs"
-            >
-              {language === "ru" ? "EN" : "RU"}
-            </button>
           </nav>
         </div>
         
@@ -131,12 +106,6 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
-              <button
-                onClick={toggleLanguage}
-                className="mx-auto text-white/90 text-sm hover:text-primary transition-colors py-2 px-6 rounded-full border border-white/10 hover:border-primary/30"
-              >
-                {language === "ru" ? "EN" : "RU"}
-              </button>
             </nav>
           </motion.div>
         )}
