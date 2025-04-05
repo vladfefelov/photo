@@ -63,30 +63,11 @@ export default function ContactForm() {
   return (
     <section
       id="contact"
-      className="py-20 md:py-32 bg-neutral"
+      className="py-20 md:py-32 bg-black"
       ref={ref as any}
     >
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isVisible ? "show" : "hidden"}
-          >
-            <motion.h2 
-              className="font-display text-3xl md:text-5xl mb-4"
-              variants={fadeUp}
-            >
-              {i18n.translate("contact.title")}
-            </motion.h2>
-            <motion.p 
-              className="text-gray-300 max-w-xl mx-auto"
-              variants={fadeUp}
-            >
-              {i18n.translate("contact.description")}
-            </motion.p>
-          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
             {/* Contact Information */}
@@ -174,9 +155,9 @@ export default function ContactForm() {
                       type="text"
                       id="name"
                       {...register("name")}
-                      className={`w-full bg-[#222222] border ${
+                      className={`w-full bg-[#1c1c1c] border ${
                         errors.name ? "border-red-500" : "border-[#333333]"
-                      } px-4 py-3 text-white focus:border-accent focus:outline-none transition-colors`}
+                      } px-4 py-3 text-white rounded-lg focus:border-accent focus:outline-none transition-colors`}
                     />
                     {errors.name && (
                       <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>
@@ -191,9 +172,9 @@ export default function ContactForm() {
                       type="email"
                       id="email"
                       {...register("email")}
-                      className={`w-full bg-[#222222] border ${
+                      className={`w-full bg-[#1c1c1c] border ${
                         errors.email ? "border-red-500" : "border-[#333333]"
-                      } px-4 py-3 text-white focus:border-accent focus:outline-none transition-colors`}
+                      } px-4 py-3 text-white rounded-lg focus:border-accent focus:outline-none transition-colors`}
                     />
                     {errors.email && (
                       <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>
@@ -209,9 +190,9 @@ export default function ContactForm() {
                     type="text"
                     id="subject"
                     {...register("subject")}
-                    className={`w-full bg-[#222222] border ${
+                    className={`w-full bg-[#1c1c1c] border ${
                       errors.subject ? "border-red-500" : "border-[#333333]"
-                    } px-4 py-3 text-white focus:border-accent focus:outline-none transition-colors`}
+                    } px-4 py-3 text-white rounded-lg focus:border-accent focus:outline-none transition-colors`}
                   />
                   {errors.subject && (
                     <p className="text-xs text-red-500 mt-1">{errors.subject.message}</p>
@@ -226,9 +207,9 @@ export default function ContactForm() {
                     id="message"
                     rows={5}
                     {...register("message")}
-                    className={`w-full bg-[#222222] border ${
+                    className={`w-full bg-[#1c1c1c] border ${
                       errors.message ? "border-red-500" : "border-[#333333]"
-                    } px-4 py-3 text-white focus:border-accent focus:outline-none transition-colors resize-none`}
+                    } px-4 py-3 text-white rounded-lg focus:border-accent focus:outline-none transition-colors resize-none`}
                   ></textarea>
                   {errors.message && (
                     <p className="text-xs text-red-500 mt-1">{errors.message.message}</p>
@@ -239,7 +220,7 @@ export default function ContactForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-8 py-3 bg-accent text-primary hover:bg-[#d6b890] transition-colors uppercase tracking-widest text-sm flex items-center justify-center disabled:opacity-70"
+                    className="px-8 py-3 bg-accent text-black hover:bg-[#e5c455] transition-colors font-medium rounded-lg text-sm flex items-center justify-center disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>

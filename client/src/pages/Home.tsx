@@ -189,16 +189,6 @@ export default function Home() {
               >
                 {i18n.translate("contact.title")}
               </motion.h2>
-              
-              <motion.p 
-                className="text-white/60 max-w-xl mx-auto"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                {i18n.translate("contact.description")}
-              </motion.p>
             </div>
             
             <ContactForm />
