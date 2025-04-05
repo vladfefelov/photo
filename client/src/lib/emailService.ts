@@ -31,11 +31,15 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
     }
     
     // Создаем шаблон для отправки
+    // Эти параметры должны точно соответствовать переменным в вашем шаблоне EmailJS
     const templateParams = {
       from_name: data.name,
       from_email: data.email,
       subject: data.subject,
       message: data.message,
+      // Добавляем дополнительные поля, которые могут потребоваться в шаблоне
+      to_name: "Сергей Технеряд", // Имя получателя в шаблоне
+      reply_to: data.email        // Email для ответа
     };
     
     console.log('Отправка email через EmailJS...', { ...templateParams, message: `${data.message.substring(0, 20)}...` });

@@ -119,6 +119,22 @@ const translations: TranslationDictionary = {
     ru: 'Готовы запечатлеть важные моменты вашей жизни? Свяжитесь со мной для обсуждения деталей и бронирования съемки.',
     en: 'Ready to capture important moments in your life? Contact me to discuss details and book a photoshoot.',
   },
+  'contact.email': {
+    ru: 'Электронная почта',
+    en: 'Email',
+  },
+  'contact.phone': {
+    ru: 'Телефон',
+    en: 'Phone',
+  },
+  'contact.whatsapp': {
+    ru: 'WhatsApp',
+    en: 'WhatsApp',
+  },
+  'contact.availability': {
+    ru: 'Доступен для съемки детских праздников, юбилеев и фотосессий на природе. Буду рад ответить на ваши вопросы!',
+    en: 'Available for children\'s parties, anniversaries, and outdoor photoshoots. I\'ll be happy to answer your questions!',
+  },
   'contact.address': {
     ru: 'Адрес',
     en: 'Address',
@@ -134,34 +150,6 @@ const translations: TranslationDictionary = {
   'contact.socialMedia': {
     ru: 'Социальные сети',
     en: 'Social Media',
-  },
-  'contact.form.name': {
-    ru: 'Имя*',
-    en: 'Name*',
-  },
-  'contact.form.email': {
-    ru: 'Email*',
-    en: 'Email*',
-  },
-  'contact.form.subject': {
-    ru: 'Тема*',
-    en: 'Subject*',
-  },
-  'contact.form.message': {
-    ru: 'Сообщение*',
-    en: 'Message*',
-  },
-  'contact.form.submit': {
-    ru: 'Отправить сообщение',
-    en: 'Send Message',
-  },
-  'contact.form.success': {
-    ru: 'Спасибо! Ваше сообщение отправлено.',
-    en: 'Thank you! Your message has been sent.',
-  },
-  'contact.form.error': {
-    ru: 'Произошла ошибка. Пожалуйста, попробуйте снова позже.',
-    en: 'An error occurred. Please try again later.',
   },
   
   // Footer

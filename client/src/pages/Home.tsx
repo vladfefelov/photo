@@ -7,7 +7,7 @@ import PortfolioFilters from "@/components/portfolio/PortfolioFilters";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import AboutSection from "@/components/about/AboutSection";
 import Testimonials from "@/components/about/Testimonials";
-import ContactForm from "@/components/contact/ContactForm";
+import ContactSection from "@/components/contact/ContactForm";
 import CustomCursor from "@/components/ui/CustomCursor";
 import { i18n } from "@/lib/i18n";
 import { Category, PortfolioItem, Testimonial } from "@/lib/types";
@@ -191,7 +191,7 @@ export default function Home() {
               </motion.h2>
             </div>
             
-            <ContactForm />
+            <ContactSection />
           </div>
         </section>
       </main>
