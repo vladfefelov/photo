@@ -42,14 +42,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all testimonials
+  // Testimonials endpoint removed as per client request
   app.get("/api/testimonials", async (req, res) => {
-    try {
-      const testimonials = await storage.getTestimonials();
-      res.json(testimonials);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch testimonials" });
-    }
+    res.json([]);
   });
 
   // Submit contact form

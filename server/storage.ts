@@ -83,7 +83,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Мужской деловой портрет",
         description: "Профессиональная фотосессия",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144014_Instagram.jpg",
+        imageUrl: "assets/photos/portraits/Screenshot_20250405_144014_Instagram.jpg",
         categoryId: 2, // portraits
         order: 1
       },
@@ -91,7 +91,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Женский портрет в стиле фэшн",
         description: "Художественная фотосессия",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144027_Instagram.jpg",
+        imageUrl: "assets/photos/portraits/Screenshot_20250405_144027_Instagram.jpg",
         categoryId: 2, // portraits
         order: 2
       },
@@ -99,7 +99,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Портрет в темных тонах",
         description: "Студийная съемка",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144421_Instagram.jpg",
+        imageUrl: "assets/photos/portraits/Screenshot_20250405_144421_Instagram.jpg",
         categoryId: 2, // portraits
         order: 3
       },
@@ -107,7 +107,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Художественный портрет",
         description: "Работа со светом и тенью",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144258_Instagram.jpg",
+        imageUrl: "assets/photos/portraits/Screenshot_20250405_144258_Instagram.jpg",
         categoryId: 2, // portraits
         order: 4
       },
@@ -115,7 +115,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Женский портрет на природе",
         description: "Естественное освещение",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144351_Instagram.jpg",
+        imageUrl: "assets/photos/portraits/Screenshot_20250405_144351_Instagram.jpg",
         categoryId: 2, // portraits
         order: 5
       },
@@ -125,7 +125,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Детская фотосессия",
         description: "Радостные моменты",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_145025_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145025_Instagram.jpg",
         categoryId: 3, // children
         order: 1
       },
@@ -133,7 +133,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Ребенок и природа",
         description: "Летняя фотосессия",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_145102_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145102_Instagram.jpg",
         categoryId: 3, // children
         order: 2
       },
@@ -141,7 +141,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Детский праздник",
         description: "Яркие эмоции",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_145213_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145213_Instagram.jpg",
         categoryId: 3, // children
         order: 3
       },
@@ -149,7 +149,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Детский портрет",
         description: "Индивидуальная фотосессия",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_145510_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145510_Instagram.jpg",
         categoryId: 3, // children
         order: 4
       },
@@ -157,7 +157,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Малыш на прогулке",
         description: "Живые кадры",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_145548_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145548_Instagram.jpg",
         categoryId: 3, // children
         order: 5
       },
@@ -167,7 +167,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Семейная фотосессия",
         description: "Теплые моменты вместе",
-        imageUrl: "/assets/photos/family/Screenshot_20250405_144056_Instagram.jpg",
+        imageUrl: "assets/photos/family/Screenshot_20250405_144056_Instagram.jpg",
         categoryId: 4, // family
         order: 1
       },
@@ -175,7 +175,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Счастливая семья",
         description: "Портрет всей семьи",
-        imageUrl: "/assets/photos/family/Screenshot_20250405_144228_Instagram.jpg",
+        imageUrl: "assets/photos/family/Screenshot_20250405_144228_Instagram.jpg",
         categoryId: 4, // family
         order: 2
       },
@@ -183,7 +183,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Семейный отдых",
         description: "Фотосессия на природе",
-        imageUrl: "/assets/photos/family/Screenshot_20250405_144305_Instagram.jpg",
+        imageUrl: "assets/photos/family/Screenshot_20250405_144305_Instagram.jpg",
         categoryId: 4, // family
         order: 3
       },
@@ -193,7 +193,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Городская архитектура",
         description: "Современный город",
-        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144616_Instagram.jpg",
+        imageUrl: "assets/photos/landscapes/Screenshot_20250405_144616_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 1
       },
@@ -201,7 +201,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Горный пейзаж",
         description: "Величественные виды",
-        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144636_Instagram.jpg",
+        imageUrl: "assets/photos/landscapes/Screenshot_20250405_144636_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 2
       },
@@ -209,7 +209,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Архитектура города",
         description: "Исторический центр",
-        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144807_Instagram.jpg",
+        imageUrl: "assets/photos/landscapes/Screenshot_20250405_144807_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 3
       },
@@ -217,7 +217,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Морской пейзаж",
         description: "Закат у моря",
-        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_150357_Instagram.jpg",
+        imageUrl: "assets/photos/landscapes/Screenshot_20250405_150357_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 4
       },
@@ -225,7 +225,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Городские улицы",
         description: "Урбанистические пейзажи",
-        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_150130_Instagram.jpg",
+        imageUrl: "assets/photos/landscapes/Screenshot_20250405_150130_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 5
       },
@@ -235,7 +235,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Домашние питомцы",
         description: "Фотосессия с кошкой",
-        imageUrl: "/assets/photos/animals/Screenshot_20250405_143956_Instagram.jpg",
+        imageUrl: "assets/photos/animals/Screenshot_20250405_143956_Instagram.jpg",
         categoryId: 6, // animals
         order: 1
       },
@@ -243,7 +243,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Кошка в студии",
         description: "Профессиональная съемка",
-        imageUrl: "/assets/photos/animals/Screenshot_20250405_145915_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145915_Instagram.jpg",
         categoryId: 6, // animals
         order: 2
       },
@@ -251,7 +251,7 @@ export class MemStorage implements IStorage {
         id: this.portfolioItemCurrentId++,
         title: "Игривый питомец",
         description: "Живые эмоции",
-        imageUrl: "/assets/photos/animals/Screenshot_20250405_145928_Instagram.jpg",
+        imageUrl: "assets/photos/children/Screenshot_20250405_145928_Instagram.jpg",
         categoryId: 6, // animals
         order: 3
       }
