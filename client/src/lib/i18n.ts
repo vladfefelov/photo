@@ -83,6 +83,10 @@ const translations: TranslationDictionary = {
     ru: 'Животные',
     en: 'Animals',
   },
+  'portfolio.events': {
+    ru: 'Мероприятия',
+    en: 'Events',
+  },
   
   // About Section
   'about.title': {

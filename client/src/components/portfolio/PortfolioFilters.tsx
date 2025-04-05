@@ -42,6 +42,12 @@ export default function PortfolioFilters({
               ? i18n.translate("portfolio.children")
               : category.slug === "portraits"
               ? i18n.translate("portfolio.portraits")
+              : category.slug === "family"
+              ? i18n.translate("portfolio.family")
+              : category.slug === "landscapes"
+              ? i18n.translate("portfolio.landscapes")
+              : category.slug === "animals"
+              ? i18n.translate("portfolio.animals")
               : category.name
             }
           </motion.button>

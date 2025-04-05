@@ -78,71 +78,103 @@ export class MemStorage implements IStorage {
     
     // Default portfolio items
     const portfolioItems = [
-      // Портреты
+      // Портреты (Portraits)
       {
         id: this.portfolioItemCurrentId++,
-        title: "Мужской портрет",
-        description: "Индивидуальная фотосессия в городе",
+        title: "Мужской деловой портрет",
+        description: "Профессиональная фотосессия",
         imageUrl: "/assets/photos/portraits/Screenshot_20250405_144014_Instagram.jpg",
         categoryId: 2, // portraits
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Женский портрет",
-        description: "Студийная фотосессия",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144258_Instagram.jpg",
+        title: "Женский портрет в стиле фэшн",
+        description: "Художественная фотосессия",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144027_Instagram.jpg",
         categoryId: 2, // portraits
         order: 2
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Летний портрет",
-        description: "Фотосессия в парке",
-        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144351_Instagram.jpg",
+        title: "Портрет в темных тонах",
+        description: "Студийная съемка",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144421_Instagram.jpg",
         categoryId: 2, // portraits
         order: 3
       },
-      
-      // Детская съемка
       {
         id: this.portfolioItemCurrentId++,
-        title: "Детский портрет",
-        description: "Индивидуальная фотосессия",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_144117_Instagram.jpg",
+        title: "Художественный портрет",
+        description: "Работа со светом и тенью",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144258_Instagram.jpg",
+        categoryId: 2, // portraits
+        order: 4
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Женский портрет на природе",
+        description: "Естественное освещение",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144351_Instagram.jpg",
+        categoryId: 2, // portraits
+        order: 5
+      },
+      
+      // Детская съемка (Children)
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Детская фотосессия",
+        description: "Радостные моменты",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_145025_Instagram.jpg",
         categoryId: 3, // children
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "День рождения",
-        description: "Детский праздник, 7 лет",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_144141_Instagram.jpg",
+        title: "Ребенок и природа",
+        description: "Летняя фотосессия",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_145102_Instagram.jpg",
         categoryId: 3, // children
         order: 2
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Детская фотосессия",
-        description: "Съемка на природе",
-        imageUrl: "/assets/photos/children/Screenshot_20250405_144200_Instagram.jpg",
+        title: "Детский праздник",
+        description: "Яркие эмоции",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_145213_Instagram.jpg",
         categoryId: 3, // children
         order: 3
       },
-      
-      // Семейная съемка
       {
         id: this.portfolioItemCurrentId++,
-        title: "Семейный портрет",
-        description: "Фотосессия в студии",
+        title: "Детский портрет",
+        description: "Индивидуальная фотосессия",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_145510_Instagram.jpg",
+        categoryId: 3, // children
+        order: 4
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Малыш на прогулке",
+        description: "Живые кадры",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_145548_Instagram.jpg",
+        categoryId: 3, // children
+        order: 5
+      },
+      
+      // Семейная съемка (Family)
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Семейная фотосессия",
+        description: "Теплые моменты вместе",
         imageUrl: "/assets/photos/family/Screenshot_20250405_144056_Instagram.jpg",
         categoryId: 4, // family
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Семейная прогулка",
-        description: "Фотосессия в парке",
+        title: "Счастливая семья",
+        description: "Портрет всей семьи",
         imageUrl: "/assets/photos/family/Screenshot_20250405_144228_Instagram.jpg",
         categoryId: 4, // family
         order: 2
@@ -150,25 +182,25 @@ export class MemStorage implements IStorage {
       {
         id: this.portfolioItemCurrentId++,
         title: "Семейный отдых",
-        description: "Летняя фотосессия на природе",
+        description: "Фотосессия на природе",
         imageUrl: "/assets/photos/family/Screenshot_20250405_144305_Instagram.jpg",
         categoryId: 4, // family
         order: 3
       },
       
-      // Пейзажи и архитектура
+      // Пейзажи и архитектура (Landscapes)
       {
         id: this.portfolioItemCurrentId++,
-        title: "Городской пейзаж",
-        description: "Исторический центр города",
+        title: "Городская архитектура",
+        description: "Современный город",
         imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144616_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Морской закат",
-        description: "Вечерняя фотосессия на побережье",
+        title: "Горный пейзаж",
+        description: "Величественные виды",
         imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144636_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 2
@@ -176,34 +208,50 @@ export class MemStorage implements IStorage {
       {
         id: this.portfolioItemCurrentId++,
         title: "Архитектура города",
-        description: "Улицы и здания",
+        description: "Исторический центр",
         imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144807_Instagram.jpg",
         categoryId: 5, // landscapes
         order: 3
       },
-      
-      // Животные
       {
         id: this.portfolioItemCurrentId++,
-        title: "Домашний питомец",
-        description: "Фотосессия с котом",
-        imageUrl: "/assets/photos/animals/Screenshot_20250405_145915_Instagram.jpg",
+        title: "Морской пейзаж",
+        description: "Закат у моря",
+        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_150357_Instagram.jpg",
+        categoryId: 5, // landscapes
+        order: 4
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Городские улицы",
+        description: "Урбанистические пейзажи",
+        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_150130_Instagram.jpg",
+        categoryId: 5, // landscapes
+        order: 5
+      },
+      
+      // Животные (Animals)
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Домашние питомцы",
+        description: "Фотосессия с кошкой",
+        imageUrl: "/assets/photos/animals/Screenshot_20250405_143956_Instagram.jpg",
         categoryId: 6, // animals
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Уличный кот",
-        description: "Фотосессия на улице",
-        imageUrl: "/assets/photos/animals/Screenshot_20250405_145928_Instagram.jpg",
+        title: "Кошка в студии",
+        description: "Профессиональная съемка",
+        imageUrl: "/assets/photos/animals/Screenshot_20250405_145915_Instagram.jpg",
         categoryId: 6, // animals
         order: 2
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Домашние любимцы",
-        description: "Студийная фотосессия с животными",
-        imageUrl: "/assets/photos/animals/Screenshot_20250405_150215_Instagram.jpg",
+        title: "Игривый питомец",
+        description: "Живые эмоции",
+        imageUrl: "/assets/photos/animals/Screenshot_20250405_145928_Instagram.jpg",
         categoryId: 6, // animals
         order: 3
       }
