@@ -63,17 +63,25 @@ const translations: TranslationDictionary = {
     ru: 'Все работы',
     en: 'All Works',
   },
-  'portfolio.events': {
-    ru: 'Мероприятия',
-    en: 'Events',
+  'portfolio.portraits': {
+    ru: 'Портреты',
+    en: 'Portraits',
   },
   'portfolio.children': {
     ru: 'Детская съемка',
     en: 'Children',
   },
-  'portfolio.portraits': {
-    ru: 'Портреты',
-    en: 'Portraits',
+  'portfolio.family': {
+    ru: 'Семейная съемка',
+    en: 'Family',
+  },
+  'portfolio.landscapes': {
+    ru: 'Пейзажи и архитектура',
+    en: 'Landscapes & Architecture',
+  },
+  'portfolio.animals': {
+    ru: 'Животные',
+    en: 'Animals',
   },
   
   // About Section

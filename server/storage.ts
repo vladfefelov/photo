@@ -32,10 +32,6 @@ export interface IStorage {
   getPortfolioItemsByCategory(categoryId: number): Promise<PortfolioItem[]>;
   createPortfolioItem(item: InsertPortfolioItem): Promise<PortfolioItem>;
   
-  // Testimonial methods
-  getTestimonials(): Promise<Testimonial[]>;
-  createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial>;
-  
   // Contact message methods
   createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
   getContactMessages(): Promise<ContactMessage[]>;
@@ -45,26 +41,22 @@ export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private categories: Map<number, Category>;
   private portfolioItems: Map<number, PortfolioItem>;
-  private testimonials: Map<number, Testimonial>;
   private contactMessages: Map<number, ContactMessage>;
   
   private userCurrentId: number;
   private categoryCurrentId: number;
   private portfolioItemCurrentId: number;
-  private testimonialCurrentId: number;
   private contactMessageCurrentId: number;
 
   constructor() {
     this.users = new Map();
     this.categories = new Map();
     this.portfolioItems = new Map();
-    this.testimonials = new Map();
     this.contactMessages = new Map();
     
     this.userCurrentId = 1;
     this.categoryCurrentId = 1;
     this.portfolioItemCurrentId = 1;
-    this.testimonialCurrentId = 1;
     this.contactMessageCurrentId = 1;
     
     // Initialize with default data
@@ -75,93 +67,151 @@ export class MemStorage implements IStorage {
     // Default categories
     const categories = [
       { id: this.categoryCurrentId++, name: "Все работы", slug: "all" },
-      { id: this.categoryCurrentId++, name: "Мероприятия", slug: "events" },
+      { id: this.categoryCurrentId++, name: "Портреты", slug: "portraits" },
       { id: this.categoryCurrentId++, name: "Детская съемка", slug: "children" },
-      { id: this.categoryCurrentId++, name: "Портреты", slug: "portraits" }
+      { id: this.categoryCurrentId++, name: "Семейная съемка", slug: "family" },
+      { id: this.categoryCurrentId++, name: "Пейзажи и архитектура", slug: "landscapes" },
+      { id: this.categoryCurrentId++, name: "Животные", slug: "animals" }
     ];
     
     categories.forEach(category => this.categories.set(category.id, category));
     
     // Default portfolio items
     const portfolioItems = [
+      // Портреты
       {
         id: this.portfolioItemCurrentId++,
-        title: "Юбилей Ольги, 60 лет",
-        description: "Юбилейное торжество в ресторане, март 2024",
-        imageUrl: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=800&h=1000",
-        categoryId: 2, // events
+        title: "Мужской портрет",
+        description: "Индивидуальная фотосессия в городе",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144014_Instagram.jpg",
+        categoryId: 2, // portraits
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Детский день рождения",
-        description: "Праздник Максима, 5 лет",
-        imageUrl: "https://images.unsplash.com/photo-1602631985686-1bb0e6a8696e?auto=format&fit=crop&q=80&w=800&h=1200",
+        title: "Женский портрет",
+        description: "Студийная фотосессия",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144258_Instagram.jpg",
+        categoryId: 2, // portraits
+        order: 2
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Летний портрет",
+        description: "Фотосессия в парке",
+        imageUrl: "/assets/photos/portraits/Screenshot_20250405_144351_Instagram.jpg",
+        categoryId: 2, // portraits
+        order: 3
+      },
+      
+      // Детская съемка
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Детский портрет",
+        description: "Индивидуальная фотосессия",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_144117_Instagram.jpg",
         categoryId: 3, // children
+        order: 1
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "День рождения",
+        description: "Детский праздник, 7 лет",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_144141_Instagram.jpg",
+        categoryId: 3, // children
+        order: 2
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Детская фотосессия",
+        description: "Съемка на природе",
+        imageUrl: "/assets/photos/children/Screenshot_20250405_144200_Instagram.jpg",
+        categoryId: 3, // children
+        order: 3
+      },
+      
+      // Семейная съемка
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Семейный портрет",
+        description: "Фотосессия в студии",
+        imageUrl: "/assets/photos/family/Screenshot_20250405_144056_Instagram.jpg",
+        categoryId: 4, // family
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
         title: "Семейная прогулка",
-        description: "Фотосессия на природе, парк Горького",
-        imageUrl: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=800&h=1000",
-        categoryId: 3, // children
+        description: "Фотосессия в парке",
+        imageUrl: "/assets/photos/family/Screenshot_20250405_144228_Instagram.jpg",
+        categoryId: 4, // family
         order: 2
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Годовщина свадьбы",
-        description: "10 лет вместе, февраль 2024",
-        imageUrl: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=800&h=1000",
-        categoryId: 2, // events
-        order: 2
+        title: "Семейный отдых",
+        description: "Летняя фотосессия на природе",
+        imageUrl: "/assets/photos/family/Screenshot_20250405_144305_Instagram.jpg",
+        categoryId: 4, // family
+        order: 3
       },
+      
+      // Пейзажи и архитектура
       {
         id: this.portfolioItemCurrentId++,
-        title: "Весенняя фотосессия",
-        description: "Индивидуальная съемка на природе",
-        imageUrl: "https://images.unsplash.com/photo-1623656122769-58bede72a68e?auto=format&fit=crop&q=80&w=800&h=1000",
-        categoryId: 4, // portraits
+        title: "Городской пейзаж",
+        description: "Исторический центр города",
+        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144616_Instagram.jpg",
+        categoryId: 5, // landscapes
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Детский праздник",
-        description: "Выпускной в детском саду",
-        imageUrl: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=800&h=1000",
-        categoryId: 3, // children
+        title: "Морской закат",
+        description: "Вечерняя фотосессия на побережье",
+        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144636_Instagram.jpg",
+        categoryId: 5, // landscapes
+        order: 2
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Архитектура города",
+        description: "Улицы и здания",
+        imageUrl: "/assets/photos/landscapes/Screenshot_20250405_144807_Instagram.jpg",
+        categoryId: 5, // landscapes
+        order: 3
+      },
+      
+      // Животные
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Домашний питомец",
+        description: "Фотосессия с котом",
+        imageUrl: "/assets/photos/animals/Screenshot_20250405_145915_Instagram.jpg",
+        categoryId: 6, // animals
+        order: 1
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Уличный кот",
+        description: "Фотосессия на улице",
+        imageUrl: "/assets/photos/animals/Screenshot_20250405_145928_Instagram.jpg",
+        categoryId: 6, // animals
+        order: 2
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Домашние любимцы",
+        description: "Студийная фотосессия с животными",
+        imageUrl: "/assets/photos/animals/Screenshot_20250405_150215_Instagram.jpg",
+        categoryId: 6, // animals
         order: 3
       }
     ];
     
     portfolioItems.forEach(item => this.portfolioItems.set(item.id, item));
     
-    // Default testimonials
-    const testimonials = [
-      {
-        id: this.testimonialCurrentId++,
-        name: "Мария Петрова",
-        role: "Юбилей 50 лет",
-        content: "Огромное спасибо Сергею за фотографии с моего юбилея! Несмотря на то, что он начинающий фотограф, сумел поймать самые искренние эмоции и теплые моменты праздника. Очень рекомендую!",
-        order: 1
-      },
-      {
-        id: this.testimonialCurrentId++,
-        name: "Елена Смирнова",
-        role: "Детский день рождения",
-        content: "Сергей отлично справился с фотосъемкой детского праздника. Дети были в восторге, а фотографии получились яркими и живыми. У него определенно есть талант работать с детьми!",
-        order: 2
-      },
-      {
-        id: this.testimonialCurrentId++,
-        name: "Андрей и Наталья",
-        role: "Семейная фотосессия на природе",
-        content: "Фотосессия с Сергеем оставила только положительные впечатления. Мы с женой и двумя детьми провели замечательный день на природе, а Сергей сумел создать непринужденную атмосферу и запечатлеть наши искренние улыбки.",
-        order: 3
-      }
-    ];
-    
-    testimonials.forEach(testimonial => this.testimonials.set(testimonial.id, testimonial));
+    // Testimonials удалены по запросу клиента
   }
 
   // User methods
@@ -223,22 +273,7 @@ export class MemStorage implements IStorage {
     return item;
   }
   
-  // Testimonial methods
-  async getTestimonials(): Promise<Testimonial[]> {
-    return Array.from(this.testimonials.values()).sort((a, b) => (a.order || 0) - (b.order || 0));
-  }
-  
-  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
-    const id = this.testimonialCurrentId++;
-    const testimonial: Testimonial = { 
-      ...insertTestimonial, 
-      id, 
-      order: insertTestimonial.order || 0, 
-      role: insertTestimonial.role || null 
-    };
-    this.testimonials.set(id, testimonial);
-    return testimonial;
-  }
+  // Testimonial methods удалены по запросу клиента
   
   // Contact message methods
   async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {

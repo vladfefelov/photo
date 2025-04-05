@@ -36,12 +36,12 @@ export default function ContactSection() {
               className="flex flex-col items-center space-y-4"
             >
               <div className="w-16 h-16 rounded-full bg-[#1c1c1c] flex items-center justify-center mb-2">
-                <Mail size={28} className="text-accent" />
+                <Mail size={28} className="text-primary" />
               </div>
               <h3 className="text-xl font-display text-white">{i18n.translate("contact.email")}</h3>
               <a 
                 href="mailto:tehnichka.migelya@gmail.com" 
-                className="text-gray-300 hover:text-accent transition-colors"
+                className="text-gray-300 hover:text-primary transition-colors"
               >
                 tehnichka.migelya@gmail.com
               </a>
@@ -53,12 +53,12 @@ export default function ContactSection() {
               className="flex flex-col items-center space-y-4"
             >
               <div className="w-16 h-16 rounded-full bg-[#1c1c1c] flex items-center justify-center mb-2">
-                <Phone size={28} className="text-accent" />
+                <Phone size={28} className="text-primary" />
               </div>
               <h3 className="text-xl font-display text-white">{i18n.translate("contact.phone")}</h3>
               <a 
                 href="tel:+77478225648" 
-                className="text-gray-300 hover:text-accent transition-colors"
+                className="text-gray-300 hover:text-primary transition-colors"
               >
                 +7 (747) 822-5648
               </a>
@@ -70,12 +70,12 @@ export default function ContactSection() {
               className="flex flex-col items-center space-y-4"
             >
               <div className="w-16 h-16 rounded-full bg-[#1c1c1c] flex items-center justify-center mb-2">
-                <MessageSquare size={28} className="text-accent" />
+                <MessageSquare size={28} className="text-primary" />
               </div>
               <h3 className="text-xl font-display text-white">WhatsApp</h3>
               <a 
                 href="https://wa.me/37258391846" 
-                className="text-gray-300 hover:text-accent transition-colors"
+                className="text-gray-300 hover:text-primary transition-colors"
               >
                 +372 5839 1846
               </a>
