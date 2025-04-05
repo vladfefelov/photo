@@ -56,8 +56,8 @@ const translations: TranslationDictionary = {
     en: 'Portfolio',
   },
   'portfolio.description': {
-    ru: 'Мои фотографии детских праздников, семейных встреч, юбилеев и фотосессий на природе для детей и взрослых',
-    en: 'My photos of children\'s parties, family gatherings, anniversaries and outdoor photoshoots for children and adults',
+    ru: 'Я фотографирую любые события вашей жизни: свадьбы, детские праздники, семейные встречи, юбилеи, корпоративы и любые другие мероприятия. Также провожу индивидуальные и групповые фотосессии в студии или на природе',
+    en: 'I photograph any events in your life: weddings, children\'s parties, family gatherings, anniversaries, corporate events and any other occasions. I also conduct individual and group photoshoots in the studio or outdoors',
   },
   'portfolio.allWorks': {
     ru: 'Все работы',
@@ -90,8 +90,8 @@ const translations: TranslationDictionary = {
     en: 'Photography is my passion that has grown into something more. I strive to capture sincere emotions and important moments in your life so they stay with you forever. For me, each photograph is a story that you can revisit again and again.',
   },
   'about.bio3': {
-    ru: 'Я специализируюсь на съемке детских праздников, семейных встреч, юбилеев и провожу фотосессии на природе как для детей, так и для взрослых. Всегда открыт для новых идей и творческих экспериментов!',
-    en: 'I specialize in photographing children\'s parties, family gatherings, anniversaries, and I conduct outdoor photoshoots for both children and adults. Always open to new ideas and creative experiments!',
+    ru: 'Я готов к проведению абсолютно любого вида фотосъемки - будь то свадьба, детский праздник, семейное торжество, юбилей, корпоративное мероприятие или индивидуальная фотосессия в студии или на природе. Всегда открыт для новых идей и творческих экспериментов!',
+    en: 'I am ready to conduct absolutely any type of photography - be it a wedding, children\'s party, family celebration, anniversary, corporate event or individual photoshoot in the studio or outdoors. Always open to new ideas and creative experiments!',
   },
   'about.stats.clients': {
     ru: 'довольных клиентов',
@@ -142,8 +142,8 @@ const translations: TranslationDictionary = {
     en: 'WhatsApp',
   },
   'contact.availability': {
-    ru: 'Доступен для съемки детских праздников, юбилеев и фотосессий на природе. Буду рад ответить на ваши вопросы!',
-    en: 'Available for children\'s parties, anniversaries, and outdoor photoshoots. I\'ll be happy to answer your questions!',
+    ru: 'Я готов провести для вас фотосъемку любого формата и сложности. Свадьбы, портреты, семейные торжества, корпоративы, детские праздники, студийная фотография - обращайтесь с любыми идеями! Буду рад ответить на ваши вопросы!',
+    en: 'I am ready to conduct a photoshoot of any format and complexity for you. Weddings, portraits, family celebrations, corporate events, children\'s parties, studio photography - contact me with any ideas! I\'ll be happy to answer your questions!',
   },
   'contact.address': {
     ru: 'Адрес',
@@ -164,8 +164,8 @@ const translations: TranslationDictionary = {
   
   // Footer
   'footer.copyright': {
-    ru: '© 2023 Сергей Технерядов. Все права защищены',
-    en: '© 2023 Sergey Tekneryad. All rights reserved',
+    ru: '© 2025 Сергей Технерядов. Все права защищены',
+    en: '© 2025 Sergey Tekneryad. All rights reserved',
   },
 };
 

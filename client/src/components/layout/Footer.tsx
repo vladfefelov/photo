@@ -27,13 +27,13 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-black font-medium text-sm">
               {i18n.translate("footer.copyright")}
             </p>
           </div>
           
           <div>
-            <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs text-gray-400">
+            <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs text-black font-medium">
               {footerLinks.map((link) => (
                 <a
                   key={link.href}

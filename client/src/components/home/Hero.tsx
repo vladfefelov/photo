@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="relative h-full w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1553531889-56cc480ac5cb?auto=format&fit=crop&q=80&w=2000"
+            src="/assets/upscalemedia-transformed.jpeg" 
             alt="Artistic photography showcase"
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           />
