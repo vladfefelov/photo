@@ -7,14 +7,12 @@ import "./index.css";
 if (process.env.NODE_ENV === "development") {
   createServer({
     routes() {
+      // Указываем префикс для API маршрутов
       this.namespace = "api";
       
-      // Пропускать запросы к EmailJS
+      // Важно! Пропускаем запросы к внешним API
       this.passthrough("https://api.emailjs.com/**");
-if (process.env.NODE_ENV === "development") {
-  createServer({
-    routes() {
-      this.namespace = "api";
+      this.passthrough("https://**");
       
       // Categories
       this.get("/categories", () => [
