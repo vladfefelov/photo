@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { MessageSquare, Send } from "lucide-react";
+import { MessageSquare, Send, AlertCircle } from "lucide-react";
 import { i18n } from "@/lib/i18n";
 import { fadeIn, fadeUp, staggerContainer } from "@/lib/animations";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { sendEmail, type EmailData } from "@/lib/emailService";
+import { config } from "@/lib/config";
 
 // Form validation schema
 const formSchema = z.object({
@@ -19,6 +20,68 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
+
+// Компонент диагностики для отображения состояния EmailJS
+function EmailJSDebug() {
+  const [status, setStatus] = useState<{
+    serviceId: boolean;
+    templateId: boolean;
+    userId: boolean;
+    allConfigured: boolean;
+  }>({
+    serviceId: false,
+    templateId: false,
+    userId: false,
+    allConfigured: false
+  });
+
+  useEffect(() => {
+    // Проверяем наличие конфигурации EmailJS и устанавливаем состояние
+    const serviceId = !!config.emailjs.serviceId;
+    const templateId = !!config.emailjs.templateId;
+    const userId = !!config.emailjs.userId;
+    
+    setStatus({
+      serviceId,
+      templateId,
+      userId,
+      allConfigured: serviceId && templateId && userId
+    });
+    
+    // Подробно выводим в консоль для диагностики
+    console.log('EmailJS конфигурация:', {
+      serviceId: serviceId ? `${config.emailjs.serviceId.substring(0, 3)}...` : 'не задан',
+      templateId: templateId ? `${config.emailjs.templateId.substring(0, 3)}...` : 'не задан',
+      userId: userId ? `${config.emailjs.userId.substring(0, 3)}...` : 'не задан',
+    });
+  }, []);
+
+  // Не отображаем в production
+  if (import.meta.env.PROD) return null;
+
+  return (
+    <div className="bg-black border border-amber-600 rounded p-3 mb-4 text-sm">
+      <div className="flex items-center gap-2 mb-2">
+        <AlertCircle className="text-amber-500" size={16} />
+        <h3 className="text-amber-500 font-medium">EmailJS Диагностика</h3>
+      </div>
+      <ul className="space-y-1 text-xs">
+        <li className="flex items-center">
+          <div className={`w-3 h-3 rounded-full mr-2 ${status.serviceId ? 'bg-green-500' : 'bg-red-500'}`}></div>
+          <span>Service ID: {status.serviceId ? 'настроен' : 'не настроен'}</span>
+        </li>
+        <li className="flex items-center">
+          <div className={`w-3 h-3 rounded-full mr-2 ${status.templateId ? 'bg-green-500' : 'bg-red-500'}`}></div>
+          <span>Template ID: {status.templateId ? 'настроен' : 'не настроен'}</span>
+        </li>
+        <li className="flex items-center">
+          <div className={`w-3 h-3 rounded-full mr-2 ${status.userId ? 'bg-green-500' : 'bg-red-500'}`}></div>
+          <span>User ID: {status.userId ? 'настроен' : 'не настроен'}</span>
+        </li>
+      </ul>
+    </div>
+  );
+}
 
 export default function ContactForm() {
   const { ref, isVisible } = useScrollAnimation();
@@ -38,6 +101,9 @@ export default function ContactForm() {
     setIsSubmitting(true);
     
     try {
+      // Выводим в консоль информацию о данных для отладки
+      console.log("Пытаемся отправить письмо с данными:", data);
+      
       const success = await sendEmail({
         name: data.name,
         email: data.email,
@@ -52,12 +118,21 @@ export default function ContactForm() {
         });
         reset();
       } else {
-        throw new Error("Failed to send email");
+        throw new Error("Не удалось отправить email");
       }
     } catch (error) {
-      console.error("Contact form error:", error);
+      // Показываем подробную информацию об ошибке в консоли
+      console.error("Ошибка формы обратной связи:", error);
+      
+      // Если есть сообщение ошибки - показываем его пользователю
+      let errorMessage = i18n.translate("contact.form.error");
+      if (error instanceof Error) {
+        errorMessage = error.message;
+        console.error("Детали ошибки:", error.stack);
+      }
+      
       toast({
-        title: i18n.translate("contact.form.error"),
+        title: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -136,6 +211,9 @@ export default function ContactForm() {
               initial="hidden"
               animate={isVisible ? "show" : "hidden"}
             >
+              {/* Диагностический блок для разработчика */}
+              <EmailJSDebug />
+              
               <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

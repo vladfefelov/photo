@@ -1,15 +1,8 @@
-import emailjs from 'emailjs-com';
 import { config, validateConfig } from './config';
+import emailjs from 'emailjs-com';
 
 // Проверка конфигурации и вывод информации о статусе
 console.log('EmailJS Config Status:', validateConfig() ? 'Валидно' : 'Невалидно');
-
-// Инициализация EmailJS
-if (config.emailjs.userId) {
-  emailjs.init(config.emailjs.userId);
-} else {
-  console.error('VITE_EMAILJS_USER_ID не установлен');
-}
 
 export interface EmailData {
   name: string;
@@ -25,11 +18,19 @@ export interface EmailData {
  */
 export const sendEmail = async (data: EmailData): Promise<boolean> => {
   try {
-    // Проверяем наличие всех необходимых ключей
-    if (!validateConfig()) {
-      throw new Error('Не настроены ключи EmailJS');
+    // Проверяем наличие всех необходимых ключей и выводим диагностику
+    console.log('Проверка ключей EmailJS:', { 
+      serviceId: config.emailjs.serviceId ? 'Установлен' : 'Не установлен', 
+      templateId: config.emailjs.templateId ? 'Установлен' : 'Не установлен', 
+      userId: config.emailjs.userId ? 'Установлен' : 'Не установлен' 
+    });
+    
+    if (!config.emailjs.serviceId || !config.emailjs.templateId || !config.emailjs.userId) {
+      console.error('Отсутствуют необходимые ключи EmailJS');
+      throw new Error('Не все ключи EmailJS настроены');
     }
     
+    // Создаем шаблон для отправки
     const templateParams = {
       from_name: data.name,
       from_email: data.email,
@@ -37,25 +38,35 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
       message: data.message,
     };
     
-    console.log('Отправка email через EmailJS...');
+    console.log('Отправка email через EmailJS...', { ...templateParams, message: `${data.message.substring(0, 20)}...` });
     
-    // Для отладки
-    console.log('Используемые ключи:', {
-      serviceId: config.emailjs.serviceId,
-      templateId: config.emailjs.templateId,
-      userId: config.emailjs.userId ? 'Установлен' : 'Не установлен'
-    });
-    
-    const response = await emailjs.send(
-      config.emailjs.serviceId,
-      config.emailjs.templateId,
-      templateParams
-    );
-    
-    console.log('Успешно отправлено:', response);
-    return true;
-  } catch (error) {
+    // Отправляем без предварительной инициализации
+    try {
+      const response = await emailjs.send(
+        config.emailjs.serviceId,
+        config.emailjs.templateId,
+        templateParams,
+        config.emailjs.userId // Передаем userId напрямую
+      );
+      
+      console.log('Успешно отправлено:', response);
+      return true;
+    } catch (sendError: any) {
+      // Детальная диагностика ошибки отправки
+      console.error('Ошибка EmailJS.send:', sendError);
+      if (sendError?.text) {
+        console.error('Текст ошибки EmailJS:', sendError.text);
+      }
+      throw new Error(`Ошибка сервиса EmailJS: ${sendError?.text || sendError?.message || 'Неизвестная ошибка'}`);
+    }
+  } catch (error: any) {
     console.error('Ошибка отправки email:', error);
-    return false;
+    
+    // Формируем понятное сообщение об ошибке для пользователя
+    if (error instanceof Error) {
+      console.error(`Детали ошибки: ${error.message}`, error.stack);
+    }
+    
+    throw error; // Проброс ошибки дальше для обработки в компоненте
   }
 };
