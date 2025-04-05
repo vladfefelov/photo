@@ -9,7 +9,7 @@ import AboutSection from "@/components/about/AboutSection";
 import Testimonials from "@/components/about/Testimonials";
 import ContactSection from "@/components/contact/ContactForm";
 import CustomCursor from "@/components/ui/CustomCursor";
-import CameraImage from "@/components/camera/CameraImage";
+import SimpleCameraCanvas from "@/components/3d/SimpleCameraCanvas";
 import { i18n } from "@/lib/i18n";
 import { Category, PortfolioItem, Testimonial } from "@/lib/types";
 import { motion } from "framer-motion";
@@ -53,8 +53,8 @@ export default function Home() {
       <main>
         <Hero />
         
-        {/* Camera Section - стилизованное изображение с анимацией */}
-        <CameraImage />
+        {/* Camera Section - 3D модель камеры */}
+        <SimpleCameraCanvas />
         
         {/* Portfolio Section */}
         <section id="portfolio" className="py-20 md:py-32 bg-black">
