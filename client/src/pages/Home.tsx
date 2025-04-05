@@ -9,6 +9,7 @@ import AboutSection from "@/components/about/AboutSection";
 import Testimonials from "@/components/about/Testimonials";
 import ContactSection from "@/components/contact/ContactForm";
 import CustomCursor from "@/components/ui/CustomCursor";
+import CameraSection from "@/components/3d/CameraSection";
 import { i18n } from "@/lib/i18n";
 import { Category, PortfolioItem, Testimonial } from "@/lib/types";
 import { motion } from "framer-motion";
@@ -51,6 +52,9 @@ export default function Home() {
       
       <main>
         <Hero />
+        
+        {/* 3D Camera Section */}
+        <CameraSection />
         
         {/* Portfolio Section */}
         <section id="portfolio" className="py-20 md:py-32 bg-black">

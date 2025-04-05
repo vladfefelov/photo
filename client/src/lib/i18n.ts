@@ -40,6 +40,16 @@ const translations: TranslationDictionary = {
     en: 'Portfolio',
   },
   
+  // Camera Section
+  'camera.title': {
+    ru: 'Моя камера',
+    en: 'My Camera',
+  },
+  'camera.description': {
+    ru: 'Профессиональная фотосъемка для создания неповторимых воспоминаний',
+    en: 'Professional photography to create unique memories',
+  },
+  
   // Portfolio Section
   'portfolio.title': {
     ru: 'Портфолио',

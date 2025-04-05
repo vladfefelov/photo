@@ -120,6 +120,17 @@
   .card-apple {
     @apply rounded-xl bg-[#1c1c1c] border border-primary/10 backdrop-blur-md overflow-hidden shadow-md;
   }
+  
+  /* 3D Camera Canvas */
+  .camera-canvas-container {
+    @apply relative rounded-xl overflow-hidden; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(20,20,20,0.8));
+  }
+  
+  .camera-canvas-section {
+    @apply py-16 md:py-24 px-6 relative overflow-hidden;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 70%);
+  }
 }
 
 @layer utilities {
