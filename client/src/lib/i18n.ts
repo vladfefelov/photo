@@ -36,8 +36,8 @@ const translations: TranslationDictionary = {
     en: 'Photographer from Petropavlovsk, capturing the special moments in your life with love',
   },
   'hero.button': {
-    ru: 'Исследовать',
-    en: 'Explore',
+    ru: 'Портфолио',
+    en: 'Portfolio',
   },
   
   // Portfolio Section

@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, MessageSquare, Send } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
+import { MessageSquare, Send } from "lucide-react";
 import { i18n } from "@/lib/i18n";
 import { fadeIn, fadeUp, staggerContainer } from "@/lib/animations";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { sendEmail, type EmailData } from "@/lib/emailService";
 
 // Form validation schema
 const formSchema = z.object({
@@ -38,16 +38,21 @@ export default function ContactForm() {
     setIsSubmitting(true);
     
     try {
-      const response = await apiRequest("POST", "/api/contact", data);
-      if (response.ok) {
+      const success = await sendEmail({
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message
+      });
+      
+      if (success) {
         toast({
           title: i18n.translate("contact.form.success"),
           variant: "default",
         });
         reset();
       } else {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to submit form");
+        throw new Error("Failed to send email");
       }
     } catch (error) {
       console.error("Contact form error:", error);
@@ -93,16 +98,16 @@ export default function ContactForm() {
                   </h4>
                   <p className="text-gray-300">
                     <a 
-                      href="mailto:info@sergeyphotography.kz" 
+                      href="mailto:tehnichka.migelya@gmail.com" 
                       className="hover:text-accent transition-colors block mb-1"
                     >
-                      info@sergeyphotography.kz
+                      tehnichka.migelya@gmail.com
                     </a>
                     <a 
-                      href="tel:+77012345678" 
+                      href="tel:+77478225648" 
                       className="hover:text-accent transition-colors block"
                     >
-                      +7 (701) 234-5678
+                      +7 (747) 822-5648
                     </a>
                   </p>
                 </motion.div>
@@ -113,21 +118,7 @@ export default function ContactForm() {
                   </h4>
                   <div className="flex space-x-4">
                     <a 
-                      href="#" 
-                      className="text-gray-300 hover:text-accent transition-colors"
-                      aria-label="Instagram"
-                    >
-                      <Instagram size={20} />
-                    </a>
-                    <a 
-                      href="#" 
-                      className="text-gray-300 hover:text-accent transition-colors"
-                      aria-label="Facebook"
-                    >
-                      <Facebook size={20} />
-                    </a>
-                    <a 
-                      href="https://wa.me/77012345678" 
+                      href="https://wa.me/37258391846" 
                       className="text-gray-300 hover:text-accent transition-colors"
                       aria-label="WhatsApp"
                     >
