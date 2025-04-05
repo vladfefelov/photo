@@ -73,17 +73,17 @@ export default function AboutSection() {
               transition={{ delay: 0.3 }}
             >
               <StatItem 
-                value="150+" 
+                value="30+" 
                 label={i18n.translate("about.stats.clients")} 
                 delay={0.3}
               />
               <StatItem 
-                value="7+" 
+                value="1.5+" 
                 label={i18n.translate("about.stats.experience")} 
                 delay={0.4}
               />
               <StatItem 
-                value="20K+" 
+                value="2K+" 
                 label={i18n.translate("about.stats.photos")} 
                 delay={0.5}
               />

@@ -32,8 +32,8 @@ const translations: TranslationDictionary = {
     en: 'Sergey Tekneryad',
   },
   'hero.subtitle': {
-    ru: 'Фотограф-художник, запечатляющий подлинные эмоции и искренние моменты',
-    en: 'Artistic photographer, capturing genuine emotions and authentic moments',
+    ru: 'Фотограф из Петропавловска, с любовью запечатлевающий особенные моменты вашей жизни',
+    en: 'Photographer from Petropavlovsk, capturing the special moments in your life with love',
   },
   'hero.button': {
     ru: 'Исследовать',
@@ -46,8 +46,8 @@ const translations: TranslationDictionary = {
     en: 'Portfolio',
   },
   'portfolio.description': {
-    ru: 'Коллекция избранных работ, отражающих мой уникальный художественный взгляд и тонкое внимание к деталям',
-    en: 'A collection of selected works that reflect my unique artistic vision and careful attention to detail',
+    ru: 'Мои фотографии детских праздников, семейных встреч, юбилеев и фотосессий на природе для детей и взрослых',
+    en: 'My photos of children\'s parties, family gatherings, anniversaries and outdoor photoshoots for children and adults',
   },
   'portfolio.allWorks': {
     ru: 'Все работы',
@@ -72,16 +72,16 @@ const translations: TranslationDictionary = {
     en: 'About Me',
   },
   'about.bio1': {
-    ru: 'Привет! Меня зовут Сергей Технерядов, я профессиональный фотограф из живописного города Петропавловск, Казахстан.',
-    en: 'Hello! My name is Sergey Tekneryad, I am a professional photographer from the picturesque city of Petropavlovsk, Kazakhstan.',
+    ru: 'Привет! Меня зовут Сергей Технерядов, я начинающий фотограф из живописного города Петропавловск, Казахстан.',
+    en: 'Hello! My name is Sergey Tekneryad, I am an aspiring photographer from the picturesque city of Petropavlovsk, Kazakhstan.',
   },
   'about.bio2': {
-    ru: 'Уже более 7 лет я создаю визуальные истории, которые отражают подлинную сущность моментов и людей. Моя философия заключается в том, что каждая фотография — это не просто изображение, а эмоциональная история, заключенная в кадре.',
-    en: 'For over 7 years, I have been creating visual stories that reflect the true essence of moments and people. My philosophy is that each photograph is not just an image, but an emotional story captured in a frame.',
+    ru: 'Фотография — это мое увлечение, которое переросло в нечто большее. Я стремлюсь запечатлеть искренние эмоции и важные моменты вашей жизни, чтобы они остались с вами навсегда. Для меня каждая фотография — это история, которую вы сможете пересматривать снова и снова.',
+    en: 'Photography is my passion that has grown into something more. I strive to capture sincere emotions and important moments in your life so they stay with you forever. For me, each photograph is a story that you can revisit again and again.',
   },
   'about.bio3': {
-    ru: 'Я специализируюсь на съемке мероприятий, портретов и детских фотосессий, но всегда открыт для творческих коллабораций и новых идей.',
-    en: 'I specialize in event photography, portraits, and children\'s photoshoots, but I am always open to creative collaborations and new ideas.',
+    ru: 'Я специализируюсь на съемке детских праздников, семейных встреч, юбилеев и провожу фотосессии на природе как для детей, так и для взрослых. Всегда открыт для новых идей и творческих экспериментов!',
+    en: 'I specialize in photographing children\'s parties, family gatherings, anniversaries, and I conduct outdoor photoshoots for both children and adults. Always open to new ideas and creative experiments!',
   },
   'about.stats.clients': {
     ru: 'довольных клиентов',

@@ -86,51 +86,51 @@ export class MemStorage implements IStorage {
     const portfolioItems = [
       {
         id: this.portfolioItemCurrentId++,
-        title: "Корпоративное событие",
-        description: "Ежегодная конференция IT-компании",
-        imageUrl: "https://images.unsplash.com/photo-1525286335722-c30c6b5dfee3?auto=format&fit=crop&q=80&w=800&h=1000",
+        title: "Юбилей Ольги, 60 лет",
+        description: "Юбилейное торжество в ресторане, март 2024",
+        imageUrl: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=800&h=1000",
         categoryId: 2, // events
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Художественный портрет",
-        description: "Творческая студийная съемка",
-        imageUrl: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&q=80&w=800&h=1200",
-        categoryId: 4, // portraits
-        order: 1
-      },
-      {
-        id: this.portfolioItemCurrentId++,
-        title: "Детский портрет",
-        description: "Естественная съемка на природе",
-        imageUrl: "https://images.unsplash.com/photo-1516627145497-ae6968895b40?auto=format&fit=crop&q=80&w=800&h=1000",
+        title: "Детский день рождения",
+        description: "Праздник Максима, 5 лет",
+        imageUrl: "https://images.unsplash.com/photo-1602631985686-1bb0e6a8696e?auto=format&fit=crop&q=80&w=800&h=1200",
         categoryId: 3, // children
         order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Свадебная съемка",
-        description: "Июнь 2023, Петропавловск",
-        imageUrl: "https://images.unsplash.com/photo-1528495612343-9ca9f4a9f67c?auto=format&fit=crop&q=80&w=800&h=1000",
+        title: "Семейная прогулка",
+        description: "Фотосессия на природе, парк Горького",
+        imageUrl: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=800&h=1000",
+        categoryId: 3, // children
+        order: 2
+      },
+      {
+        id: this.portfolioItemCurrentId++,
+        title: "Годовщина свадьбы",
+        description: "10 лет вместе, февраль 2024",
+        imageUrl: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=800&h=1000",
         categoryId: 2, // events
         order: 2
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Мужской портрет",
-        description: "Деловая фотосессия",
-        imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=800&h=1000",
+        title: "Весенняя фотосессия",
+        description: "Индивидуальная съемка на природе",
+        imageUrl: "https://images.unsplash.com/photo-1623656122769-58bede72a68e?auto=format&fit=crop&q=80&w=800&h=1000",
         categoryId: 4, // portraits
-        order: 2
+        order: 1
       },
       {
         id: this.portfolioItemCurrentId++,
-        title: "Семейная съемка",
-        description: "Домашняя фотосессия",
-        imageUrl: "https://images.unsplash.com/photo-1592711938300-d5568409702e?auto=format&fit=crop&q=80&w=800&h=1000",
+        title: "Детский праздник",
+        description: "Выпускной в детском саду",
+        imageUrl: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=800&h=1000",
         categoryId: 3, // children
-        order: 2
+        order: 3
       }
     ];
     
@@ -140,23 +140,23 @@ export class MemStorage implements IStorage {
     const testimonials = [
       {
         id: this.testimonialCurrentId++,
-        name: "Анна и Михаил",
-        role: "Свадебная фотосессия",
-        content: "Сергей создал потрясающую атмосферу во время съемки. Фотографии получились естественными и живыми, именно такими, как мы хотели.",
+        name: "Мария Петрова",
+        role: "Юбилей 50 лет",
+        content: "Огромное спасибо Сергею за фотографии с моего юбилея! Несмотря на то, что он начинающий фотограф, сумел поймать самые искренние эмоции и теплые моменты праздника. Очень рекомендую!",
         order: 1
       },
       {
         id: this.testimonialCurrentId++,
-        name: "Екатерина",
-        role: "Детская фотосессия",
-        content: "Профессионал своего дела! Сергей умеет найти подход к детям — наша дочь обычно стесняется фотографов, но с ним чувствовала себя комфортно.",
+        name: "Елена Смирнова",
+        role: "Детский день рождения",
+        content: "Сергей отлично справился с фотосъемкой детского праздника. Дети были в восторге, а фотографии получились яркими и живыми. У него определенно есть талант работать с детьми!",
         order: 2
       },
       {
         id: this.testimonialCurrentId++,
-        name: "Алексей",
-        role: "Директор IT-компании",
-        content: "Сергей фотографировал наше корпоративное мероприятие. Результат превзошел все ожидания! Рекомендую для любых событий.",
+        name: "Андрей и Наталья",
+        role: "Семейная фотосессия на природе",
+        content: "Фотосессия с Сергеем оставила только положительные впечатления. Мы с женой и двумя детьми провели замечательный день на природе, а Сергей сумел создать непринужденную атмосферу и запечатлеть наши искренние улыбки.",
         order: 3
       }
     ];
@@ -202,30 +202,40 @@ export class MemStorage implements IStorage {
   
   // Portfolio items methods
   async getPortfolioItems(): Promise<PortfolioItem[]> {
-    return Array.from(this.portfolioItems.values()).sort((a, b) => a.order - b.order);
+    return Array.from(this.portfolioItems.values()).sort((a, b) => (a.order || 0) - (b.order || 0));
   }
   
   async getPortfolioItemsByCategory(categoryId: number): Promise<PortfolioItem[]> {
     return Array.from(this.portfolioItems.values())
       .filter(item => item.categoryId === categoryId)
-      .sort((a, b) => a.order - b.order);
+      .sort((a, b) => (a.order || 0) - (b.order || 0));
   }
   
   async createPortfolioItem(insertItem: InsertPortfolioItem): Promise<PortfolioItem> {
     const id = this.portfolioItemCurrentId++;
-    const item: PortfolioItem = { ...insertItem, id };
+    const item: PortfolioItem = { 
+      ...insertItem, 
+      id, 
+      description: insertItem.description || null, 
+      order: insertItem.order || 0 
+    };
     this.portfolioItems.set(id, item);
     return item;
   }
   
   // Testimonial methods
   async getTestimonials(): Promise<Testimonial[]> {
-    return Array.from(this.testimonials.values()).sort((a, b) => a.order - b.order);
+    return Array.from(this.testimonials.values()).sort((a, b) => (a.order || 0) - (b.order || 0));
   }
   
   async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
     const id = this.testimonialCurrentId++;
-    const testimonial: Testimonial = { ...insertTestimonial, id };
+    const testimonial: Testimonial = { 
+      ...insertTestimonial, 
+      id, 
+      order: insertTestimonial.order || 0, 
+      role: insertTestimonial.role || null 
+    };
     this.testimonials.set(id, testimonial);
     return testimonial;
   }
@@ -233,10 +243,11 @@ export class MemStorage implements IStorage {
   // Contact message methods
   async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {
     const id = this.contactMessageCurrentId++;
+    const createdAt = new Date();
     const message: ContactMessage = { 
       ...insertMessage, 
       id, 
-      createdAt: new Date(), 
+      createdAt, 
       read: false 
     };
     this.contactMessages.set(id, message);
@@ -245,7 +256,11 @@ export class MemStorage implements IStorage {
   
   async getContactMessages(): Promise<ContactMessage[]> {
     return Array.from(this.contactMessages.values())
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      .sort((a, b) => {
+        const timeA = a.createdAt ? a.createdAt.getTime() : 0;
+        const timeB = b.createdAt ? b.createdAt.getTime() : 0;
+        return timeB - timeA;
+      });
   }
 }
 
