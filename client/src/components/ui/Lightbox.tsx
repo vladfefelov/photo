@@ -56,7 +56,7 @@ export default function Lightbox({ isOpen, onClose, image }: LightboxProps) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-4"
           variants={backdropAnimation}
           initial="hidden"
           animate="visible"
@@ -64,11 +64,11 @@ export default function Lightbox({ isOpen, onClose, image }: LightboxProps) {
           onClick={onClose}
         >
           <motion.button
-            className="absolute top-6 right-6 text-white z-[55] hover:text-accent transition-colors"
+            className="absolute top-6 right-6 text-white/90 z-[55] hover:text-primary transition-colors bg-black/40 backdrop-blur-md p-2 rounded-full"
             onClick={onClose}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <X size={32} />
+            <X size={24} />
           </motion.button>
           
           <motion.div
@@ -82,24 +82,24 @@ export default function Lightbox({ isOpen, onClose, image }: LightboxProps) {
             <div className="relative">
               {!loaded && (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-10 h-10 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
                 </div>
               )}
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`max-w-full max-h-[80vh] object-contain ${loaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl ${loaded ? 'opacity-100' : 'opacity-0'}`}
                 onLoad={() => setLoaded(true)}
               />
             </div>
             
             {(image.title || image.description) && (
-              <div className="mt-4 text-center">
+              <div className="mt-6 text-center px-6 py-4 bg-white/5 backdrop-blur-md rounded-xl">
                 {image.title && (
-                  <h3 className="text-white font-display text-xl">{image.title}</h3>
+                  <h3 className="text-white font-display text-xl tracking-tight">{image.title}</h3>
                 )}
                 {image.description && (
-                  <p className="text-gray-300 mt-1">{image.description}</p>
+                  <p className="text-white/70 mt-2 font-light">{image.description}</p>
                 )}
               </div>
             )}

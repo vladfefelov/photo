@@ -53,9 +53,21 @@ export default function Home() {
         <Hero />
         
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-20 md:py-32 bg-primary">
+        <section id="portfolio" className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
-            <div className="mb-16 md:mb-24 text-center">
+            <div className="mb-16 md:mb-20 text-center">
+              <motion.div
+                className="inline-block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 inline-block">
+                  {i18n.translate("portfolio.title")}
+                </span>
+              </motion.div>
+              
               <motion.h2 
                 className="font-display text-3xl md:text-5xl mb-4"
                 variants={fadeUp}
@@ -65,8 +77,9 @@ export default function Home() {
               >
                 {i18n.translate("portfolio.title")}
               </motion.h2>
+              
               <motion.p 
-                className="text-neutral-light max-w-xl mx-auto"
+                className="text-white/60 max-w-xl mx-auto"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -89,11 +102,108 @@ export default function Home() {
           </div>
         </section>
         
-        <AboutSection />
+        {/* About Section */}
+        <section id="about" className="py-20 md:py-32 bg-black">
+          <div className="container mx-auto px-6">
+            <div className="mb-16 md:mb-20 text-center">
+              <motion.div
+                className="inline-block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 inline-block">
+                  {i18n.translate("about.title")}
+                </span>
+              </motion.div>
+            </div>
+            
+            <AboutSection />
+          </div>
+        </section>
         
-        <Testimonials testimonials={testimonials} />
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-20 md:py-32 bg-black">
+          <div className="container mx-auto px-6">
+            <div className="mb-16 md:mb-20 text-center">
+              <motion.div
+                className="inline-block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 inline-block">
+                  {i18n.translate("testimonials.title")}
+                </span>
+              </motion.div>
+              
+              <motion.h2 
+                className="font-display text-3xl md:text-5xl mb-4"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {i18n.translate("testimonials.title")}
+              </motion.h2>
+              
+              <motion.p 
+                className="text-white/60 max-w-xl mx-auto"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {i18n.translate("testimonials.description")}
+              </motion.p>
+            </div>
+            
+            <Testimonials testimonials={testimonials} />
+          </div>
+        </section>
         
-        <ContactForm />
+        {/* Contact Section */}
+        <section id="contact" className="py-20 md:py-32 bg-black">
+          <div className="container mx-auto px-6">
+            <div className="mb-16 md:mb-20 text-center">
+              <motion.div
+                className="inline-block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 inline-block">
+                  {i18n.translate("contact.title")}
+                </span>
+              </motion.div>
+              
+              <motion.h2 
+                className="font-display text-3xl md:text-5xl mb-4"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {i18n.translate("contact.title")}
+              </motion.h2>
+              
+              <motion.p 
+                className="text-white/60 max-w-xl mx-auto"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {i18n.translate("contact.description")}
+              </motion.p>
+            </div>
+            
+            <ContactForm />
+          </div>
+        </section>
       </main>
       
       <Footer />

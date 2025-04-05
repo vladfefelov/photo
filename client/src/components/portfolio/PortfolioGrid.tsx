@@ -46,7 +46,7 @@ export default function PortfolioGrid({ items, activeCategory }: PortfolioGridPr
         {filteredItems.map((item) => (
           <motion.div
             key={item.id}
-            className="portfolio-item rounded-sm overflow-hidden group cursor-pointer"
+            className="portfolio-item rounded-xl overflow-hidden group cursor-pointer shadow-lg"
             variants={portfolioHover}
             initial="rest"
             whileHover="hover"
@@ -65,10 +65,13 @@ export default function PortfolioGrid({ items, activeCategory }: PortfolioGridPr
               className="portfolio-overlay"
               variants={overlayReveal}
             >
-              <h3 className="text-white font-display text-xl md:text-2xl mb-2">{item.title}</h3>
+              <h3 className="text-white font-display text-xl md:text-2xl mb-2 tracking-tight">{item.title}</h3>
               {item.description && (
-                <p className="text-gray-300 text-sm">{item.description}</p>
+                <p className="text-white/70 text-sm font-light">{item.description}</p>
               )}
+              <span className="mt-4 px-3 py-1 rounded-full text-xs bg-white/10 text-white/90 backdrop-blur-sm">
+                Смотреть
+              </span>
             </motion.div>
           </motion.div>
         ))}

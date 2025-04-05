@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 
-// Import Google Fonts
+// Load Inter font which is similar to Apple's SF Pro
 function loadFonts() {
   // Add preconnect links
   const preconnectGoogle = document.createElement("link");
@@ -20,11 +20,20 @@ function loadFonts() {
   preconnectGstatic.crossOrigin = "anonymous";
   document.head.appendChild(preconnectGstatic);
   
-  // Add font stylesheet
+  // Add font stylesheet - Inter is similar to SF Pro
   const fontLink = document.createElement("link");
   fontLink.rel = "stylesheet";
-  fontLink.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap";
+  fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
   document.head.appendChild(fontLink);
+  
+  // Add custom CSS to use Inter as system font
+  const style = document.createElement("style");
+  style.textContent = `
+    .font-display, .font-body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function Router() {

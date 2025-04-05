@@ -14,24 +14,27 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="h-screen flex items-center justify-center relative overflow-hidden"
+      className="h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Background Image with Gradient Overlay */}
+      {/* Modern Apple-style Gradient Background */}
       <div className="absolute inset-0 z-0">
         <div className="relative h-full w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1621396302872-0a3657427424?auto=format&fit=crop&q=80&w=2000"
+            src="https://images.unsplash.com/photo-1553531889-56cc480ac5cb?auto=format&fit=crop&q=80&w=2000"
             alt="Artistic photography showcase"
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
+          
+          {/* Subtle Apple-style Blue Accent */}
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/20 to-transparent opacity-40"></div>
         </div>
       </div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-6 z-10 text-center">
         <motion.h1 
-          className="font-display text-4xl md:text-6xl lg:text-7xl mb-4 tracking-wider font-light"
+          className="font-display text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tight"
           variants={fadeIn}
           initial="hidden"
           animate="show"
@@ -49,7 +52,7 @@ export default function Hero() {
         </motion.h1>
         
         <motion.p 
-          className="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-8 text-gray-300"
+          className="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-10 text-gray-300"
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -62,12 +65,25 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           transition={{ delay: 0.3 }}
+          className="flex flex-col md:flex-row gap-4 justify-center"
         >
           <button
             onClick={scrollToPortfolio}
-            className="inline-block px-8 py-3 border border-accent text-accent hover:bg-accent hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm"
+            className="btn-apple"
           >
             {i18n.translate("hero.button")}
+          </button>
+          
+          <button
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="btn-apple-outline"
+          >
+            {i18n.translate("contact.title")}
           </button>
         </motion.div>
         
@@ -79,10 +95,10 @@ export default function Hero() {
         >
           <button 
             onClick={scrollToPortfolio}
-            className="text-gray-400 hover:text-accent transition-colors"
+            className="text-white/60 hover:text-primary transition-colors rounded-full bg-white/5 p-3"
             aria-label="Scroll down to portfolio"
           >
-            <ChevronDown size={24} />
+            <ChevronDown size={20} />
           </button>
         </motion.div>
       </div>

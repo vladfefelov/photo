@@ -100,6 +100,16 @@ const translations: TranslationDictionary = {
     en: 'Client Testimonials',
   },
   
+  // Testimonials Section
+  'testimonials.title': {
+    ru: 'Отзывы',
+    en: 'Testimonials',
+  },
+  'testimonials.description': {
+    ru: 'Узнайте, что говорят мои клиенты о работе со мной и о результатах съемок',
+    en: 'Learn what my clients say about working with me and the results of their photoshoots',
+  },
+  
   // Contact Section
   'contact.title': {
     ru: 'Связаться со мной',
