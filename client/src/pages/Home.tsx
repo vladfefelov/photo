@@ -9,7 +9,7 @@ import AboutSection from "@/components/about/AboutSection";
 import Testimonials from "@/components/about/Testimonials";
 import ContactSection from "@/components/contact/ContactForm";
 import CustomCursor from "@/components/ui/CustomCursor";
-import SimpleCameraCanvas from "@/components/3d/SimpleCameraCanvas";
+import CameraImage from "@/components/camera/CameraImage";
 import { i18n } from "@/lib/i18n";
 import { Category, PortfolioItem, Testimonial } from "@/lib/types";
 import { motion } from "framer-motion";
@@ -53,8 +53,8 @@ export default function Home() {
       <main>
         <Hero />
         
-        {/* Camera Section - 3D модель камеры */}
-        <SimpleCameraCanvas />
+        {/* Camera Section - анимированное изображение камеры */}
+        <CameraImage />
         
         {/* Portfolio Section */}
         <section id="portfolio" className="py-20 md:py-32 bg-black">
@@ -169,35 +169,7 @@ export default function Home() {
         </section>
         
         {/* Contact Section */}
-        <section id="contact" className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <div className="mb-16 md:mb-20 text-center">
-              <motion.div
-                className="inline-block"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5 }}
-              >
-                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 inline-block">
-                  {i18n.translate("contact.title")}
-                </span>
-              </motion.div>
-              
-              <motion.h2 
-                className="font-display text-3xl md:text-5xl mb-4"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                {i18n.translate("contact.title")}
-              </motion.h2>
-            </div>
-            
-            <ContactSection />
-          </div>
-        </section>
+        <ContactSection />
       </main>
       
       <Footer />
