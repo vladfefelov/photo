@@ -9,6 +9,13 @@ if (process.env.NODE_ENV === "development") {
     routes() {
       this.namespace = "api";
       
+      // Пропускать запросы к EmailJS
+      this.passthrough("https://api.emailjs.com/**");
+if (process.env.NODE_ENV === "development") {
+  createServer({
+    routes() {
+      this.namespace = "api";
+      
       // Categories
       this.get("/categories", () => [
         { id: 1, name: "Все работы", slug: "all" },
